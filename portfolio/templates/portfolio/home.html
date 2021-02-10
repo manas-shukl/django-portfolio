@@ -1,0 +1,48 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+
+<body style="background-color: #0f1724;">
+
+<h1 style="color: white;">Manas Shukla </h1>
+{% load static %}
+<!-- 
+<a href="{% url 'blog:all_blogs' %}">Blog</a>
+<br>
+
+<a href="{% static 'portfolio/resume.pdf' %}">Resume</a>
+<br> -->
+
+<img src="{% static 'portfolio/manas.png'  %}" height="500px" style="padding-left: 870px;">
+<br>
+<h1 style="color: white; text-align: center;" >Portfolio </h1>
+
+{% for project in projects %}
+
+
+<div>
+
+<h2 style="color: white;">{{ project.title }}</h2>
+<p style="color: white;">{{ project.description }}</p>
+<img src="{{ project.image.url}}" height="250px">
+
+{% if project.url %}
+<br></h2 ><a  href="{{ project.url }}" >Link</a>
+{% endif %}  
+
+
+{% endfor %}
+
+{% endblock %}
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
